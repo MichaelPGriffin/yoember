@@ -1,0 +1,65 @@
+<h1>
+Job Applicants
+</h1>
+
+<div class="form-horizontal form-group form-group-lg row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{
+      input type = "user-supplied-text" 
+      value = applicantName
+      class = "form-control" 
+      placeholder = "What is your name?"
+    }}
+    <br>
+    {{
+      input type = "user-supplied-text" 
+      value = applicantRole
+      class = "form-control" 
+      placeholder = "What role are you applying for?" 
+    }}
+    <br>
+    {{
+      input type = "user-supplied-text" 
+      value = applicantSalary
+      class = "form-control" 
+      placeholder = "What is your expected salary?" 
+    }}
+    <br>
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-4 col-md-3">
+
+    {{!--NOTES: the first button executes a controller action that 
+         writes a record to the database.
+
+        The second button executes a route action via the dependency that is 
+        installed via the command `ember install ember-route-action-helper`.
+        For some reason, this doesn't hit the database properly ( I think because
+        of some other controller details, but that's beside the point.  The key
+        takeaway is that it's a viable strategy for calling a route action.
+    --}}
+
+    <button class="btn btn-primary btn-lg btn-block" {{action 'saveJobApplication'}}>Apply via Controller</button>
+    {{!-- <button class="btn btn-primary btn-lg btn-block" {{action (route-action 'saveJobApplication_RouteAction')}}>Apply via Route Action</button> --}}
+  </div>
+</div>
+
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>position</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each model as |applicant|}}
+    <tr>
+      <th>{{applicant.name}}</th>
+      <th>{{applicant.position}}</th>
+      <th>{{applicant.salary}}</th>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+

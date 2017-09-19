@@ -1,0 +1,21 @@
+<h1>
+This is the contact page.
+</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>email</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each model as |contact|}}
+    <tr>
+      <th>{{contact.email}}</th>
+      <th>{{contact.message}}</th>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+

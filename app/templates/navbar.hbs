@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index' class="navbar-brand"}}Library App{{/link-to}}
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav">
+        {{#link-to 'index' tagName="li"}}<a href>Home</a>{{/link-to}}
+        {{#link-to 'about' tagName="li"}}<a href>About</a>{{/link-to}}
+        {{#link-to 'contact' tagName="li"}}<a href>Contact</a>{{/link-to}}
+
+        {{!-- Looks like there is some bootstrap issue preventing the dropdown from 
+              working as intended.  Not going to occupy myself troubleshooting
+              this.  But the key takeaway is that the data is being returned from
+              the Firebase DB and being rendered in a table under the "Invitations"
+              link in the header. --}}
+
+        {{#link-to 'admin.invitations' tagName="li"}}<a href="">Invitations</a>{{/link-to}}
+        {{#link-to 'applicants' tagName="li"}}<a href="">Applicants</a>{{/link-to}}
+
+        {{#link-to 'libraries' tagName="li"}}<a href="">Libraries</a>{{/link-to}}
+
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
