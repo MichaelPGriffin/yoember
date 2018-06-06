@@ -1,0 +1,35 @@
+<h1>Libraries</h1>
+
+{{!-- 
+  <div class="well">
+  <ul class="nav nav-pills">
+      {{#link-to 'libraries.index' tagName="li"}}<a href="">List all</a>{{/link-to}}
+      {{#link-to 'libraries.new' tagName="li"}}<a href="">Add new</a>{{/link-to}}
+  </ul>
+  </div>
+--}}
+
+<div class="form-horizontal form-group form-group-lg row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    {{
+      input type = "user-supplied-text" 
+      value = someVal
+      class = "form-control" 
+      placeholder = "What is your name?"
+    }}
+    <br>
+  </div>
+
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    <button class="btn btn-primary btn-sm btn-block" {{action 'pushValue' someVal}}>New entry for array</button>
+  </div>
+</div>
+
+{{#each objectArray as |ob|}}
+  <br>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2">
+    ob
+  </div>
+{{/each}}
+
+{{outlet}}

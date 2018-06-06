@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   applicantName: '', 
   applicantRole: '', 
   applicantSalary: '', 
+  parentOrg: '',
   /////////////////////////////////////////////////// 
 
   actions: {
@@ -15,11 +16,13 @@ export default Ember.Controller.extend({
       const _name = this.get('applicantName');
       const _position = this.get('applicantRole');
       const _salary = this.get('applicantSalary');
+      const _parentOrg = this.get('parentOrg');
 
       const newApplicant = this.store.createRecord('applicants', { 
             name: _name, 
             position: _position,
-            salary: _salary
+            salary: _salary,
+            parentOrg: _parentOrg
       });
     
       newApplicant.save().then(() => {
@@ -27,6 +30,7 @@ export default Ember.Controller.extend({
         this.set('applicantName', '');
         this.set('applicantRole', '');
         this.set('applicantSalary', '');
+        this.set('parentOrg', '');
       });
     }
   }

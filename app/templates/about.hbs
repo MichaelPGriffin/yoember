@@ -1,3 +1,33 @@
-<h1>
-About Page
-</h1>
+<body>
+  <h1>
+   About Page 
+  </h1>
+  <h2>
+    Experimenting with character restriction.  Delete this stuff whenever.
+  </h2>
+
+  <div>
+    <input type="text" onkeypress="uniCharCode(event)">
+
+    <!-- Can also assign the following attribute in the div: -->
+    <!-- onkeydown="uniKeyCode(event)" -->
+  </div>
+
+  <script>
+    function uniCharCode(event) {
+      /*
+        Digits 0-9 are Unicode Characters 48-57.
+        Lowercase alphabet corresponds to 97-122.
+        Uppercase alphabet corresponds to 65-90.
+      */
+
+      // // var char = event.which || event.keyCode;
+      var char = event.charCode;
+      console.log(`The Unicode CHARACTER code is: ${char}`);
+    }
+
+    function uniKeyCode(event) {
+      console.log(`The Unicode KEY code is: ${event.keyCode}`);
+    }
+  </script>
+</body>

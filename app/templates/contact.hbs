@@ -7,12 +7,14 @@ This is the contact page.
     <tr>
       <th>email</th>
       <th>message</th>
+      <th>parentOrg</th>
     </tr>
   </thead>
   <tbody>
   {{#each model as |contact|}}
     <tr>
       <th>{{contact.email}}</th>
+      <th>{{contact.message}}</th>
       <th>{{contact.message}}</th>
     </tr>
   {{/each}}
